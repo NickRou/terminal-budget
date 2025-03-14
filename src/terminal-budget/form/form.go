@@ -45,8 +45,8 @@ func DisplayInstitutionForm() Institution {
 				Value(&institution.Name),
 
 			huh.NewFilePicker().
-				Title("CSV Transaction File").
-				Description("Select your csv transaction file.").
+				Title("CSV File").
+				Description("Select your csv file.").
 				Picking(true).
 				AllowedTypes([]string{".csv", ".CSV"}).
 				CurrentDirectory(userHomeDir).
@@ -84,7 +84,7 @@ func DisplayInstitutionForm() Institution {
 		styledFileName := strings.Join(styledFileNameLines, "\n")
 
 		fmt.Fprintf(&sb,
-			"%s\n\nFinancial Institution\n%s \n\nTransaction File\n%s",
+			"%s\n\nFinancial Institution\n%s \n\nCSV File\n%s",
 			lipgloss.NewStyle().Bold(true).Render("TRANSACTIONS"),
 			keyword(institution.Name),
 			styledFileName,
