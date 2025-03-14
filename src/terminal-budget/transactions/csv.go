@@ -72,7 +72,6 @@ func displayAmericanExpressCSV(records [][]string) {
 
 	for _, row := range records {
 		date, transaction, amount := row[0], row[1], row[2]
-		x := table.NewRow(table.RowData{date, transaction, amount})
 		rows = append(rows, table.Row{date, transaction, amount})
 	}
 	DisplayTable(columns, rows)
